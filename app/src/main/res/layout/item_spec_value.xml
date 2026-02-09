@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp">
+
+    <TextView
+        android:id="@+id/tvValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_spec_value"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp"
+        android:textSize="13sp"/>
+
+    <!-- 无货标识 -->
+    <TextView
+        android:id="@+id/tvOutOfStock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="无货"
+        android:textSize="9sp"
+        android:textColor="#FFFFFF"
+        android:background="#BDBDBD"
+        android:paddingHorizontal="4dp"
+        android:paddingVertical="2dp"
+        android:visibility="gone"
+        android:layout_gravity="bottom|end"/>
+
+</FrameLayout>
