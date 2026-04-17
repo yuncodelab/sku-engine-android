@@ -43,9 +43,9 @@ SkuEngine
 
 建议按顺序阅读：
 
-* [（一）SKU 建模（笛卡尔积）](https://github.com/yuncodelab/sku-system-design/docs/part1.md)
-* [（二）服务端建模与接口设计](https://github.com/yuncodelab/sku-system-design/docs/part2.md)
-* [（三）Android SKU 选择引擎实现](https://github.com/yuncodelab/sku-system-design/docs/part3.md)（⭐
+* [（一）SKU 建模（笛卡尔积）](https://yuncodelab.github.io/system-design/sku/sku-part1.html)
+* [（二）服务端建模与接口设计](https://yuncodelab.github.io/system-design/sku/sku-part2.html)
+* [（三）Android SKU 选择引擎实现](https://yuncodelab.github.io/system-design/sku/sku-part3.html)（⭐
   本项目对应）
 
 ---
