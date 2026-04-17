@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.sku_demo.MainActivity">
+    tools:context="com.yuncodelab.sku.MainActivity">
 
     <Button
         app:layout_constraintTop_toTopOf="parent"

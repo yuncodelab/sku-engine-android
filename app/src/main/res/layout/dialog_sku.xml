@@ -10,12 +10,24 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="¥0.00"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
+        android:textColor="#FF4400"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSelectedSpec"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="请选择规格"
+        android:textColor="#666666"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPrice" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSpec"
@@ -25,16 +37,17 @@
         app:layout_constraintBottom_toTopOf="@id/btnConfirm"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvPrice" />
+        app:layout_constraintTop_toBottomOf="@id/tvSelectedSpec" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnConfirm"
         android:layout_width="0dp"
         android:layout_height="48dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/bg_btn_confirm"
         android:enabled="false"
         android:text="确定"
-        android:textColor="@color/selector_btn_confirm_text"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

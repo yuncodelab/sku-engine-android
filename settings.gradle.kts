@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "SkuDemo"
+rootProject.name = "sku-engine-android"
 include(":app")
- 
+include(":sku-core")

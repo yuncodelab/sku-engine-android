@@ -1,83 +1,111 @@
 {
-  "specList": [
-    {
-      "specId": "style",
-      "specName": "款式",
-      "values": [
-        { "id": "sport", "name": "运动款" },
-        { "id": "casual", "name": "休闲款" }
-      ]
-    },
-    {
-      "specId": "color",
-      "specName": "颜色",
-      "values": [
-        { "id": "black", "name": "黑色" },
-        { "id": "white", "name": "白色" },
-        { "id": "blue", "name": "蓝色" }
-      ]
-    },
-    {
-      "specId": "size",
-      "specName": "尺码",
-      "values": [
-        { "id": "m", "name": "M" },
-        { "id": "l", "name": "L" },
-        { "id": "xl", "name": "XL" }
-      ]
-    }
-  ],
-  "skuList": [
-    {
-      "skuId": "sku_1",
-      "price": 199.0,
-      "stock": 12,
-      "specs": {
-        "style": "sport",
-        "color": "black",
-        "size": "m"
+  "code": 200,
+  "message": "success",
+  "data": {
+    "specList": [
+      {
+        "specId": "style",
+        "specName": "款式",
+        "values": [
+          {
+            "id": "sport",
+            "name": "运动款"
+          },
+          {
+            "id": "casual",
+            "name": "休闲款"
+          }
+        ]
+      },
+      {
+        "specId": "color",
+        "specName": "颜色",
+        "values": [
+          {
+            "id": "black",
+            "name": "黑色"
+          },
+          {
+            "id": "white",
+            "name": "白色"
+          },
+          {
+            "id": "blue",
+            "name": "蓝色"
+          }
+        ]
+      },
+      {
+        "specId": "size",
+        "specName": "尺码",
+        "values": [
+          {
+            "id": "m",
+            "name": "M"
+          },
+          {
+            "id": "l",
+            "name": "L"
+          },
+          {
+            "id": "xl",
+            "name": "XL"
+          }
+        ]
       }
-    },
-    {
-      "skuId": "sku_2",
-      "price": 199.0,
-      "stock": 0,
-      "specs": {
-        "style": "sport",
-        "color": "black",
-        "size": "l"
+    ],
+    "skuList": [
+      {
+        "skuId": "1",
+        "price": 199.0,
+        "stock": 12,
+        "specs": {
+          "color": "black",
+          "size": "m",
+          "style": "sport"
+        }
+      },
+      {
+        "skuId": "2",
+        "price": 199.0,
+        "stock": 0,
+        "specs": {
+          "color": "black",
+          "size": "l",
+          "style": "sport"
+        }
+      },
+      {
+        "skuId": "3",
+        "price": 209.0,
+        "stock": 5,
+        "specs": {
+          "color": "white",
+          "size": "m",
+          "style": "sport"
+        }
+      },
+      {
+        "skuId": "4",
+        "price": 209.0,
+        "stock": 8,
+        "specs": {
+          "color": "blue",
+          "size": "l",
+          "style": "casual"
+        }
+      },
+      {
+        "skuId": "5",
+        "price": 219.0,
+        "stock": 6,
+        "specs": {
+          "color": "black",
+          "size": "xl",
+          "style": "casual"
+        }
       }
-    },
-    {
-      "skuId": "sku_3",
-      "price": 209.0,
-      "stock": 5,
-      "specs": {
-        "style": "sport",
-        "color": "white",
-        "size": "m"
-      }
-    },
-    {
-      "skuId": "sku_4",
-      "price": 209.0,
-      "stock": 8,
-      "specs": {
-        "style": "casual",
-        "color": "blue",
-        "size": "l"
-      }
-    },
-    {
-      "skuId": "sku_5",
-      "price": 219.0,
-      "stock": 6,
-      "specs": {
-        "style": "casual",
-        "color": "black",
-        "size": "xl"
-      }
-    }
-  ],
-  "defaultSkuId": "sku_1"
+    ],
+    "defaultSkuId": "1"
+  }
 }
