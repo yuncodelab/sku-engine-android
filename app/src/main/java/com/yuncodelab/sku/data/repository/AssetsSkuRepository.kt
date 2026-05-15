@@ -6,6 +6,8 @@ import com.google.gson.reflect.TypeToken
 import com.yuncodelab.sku.data.remote.ApiResponse
 import com.yuncodelab.sku.core.model.result.SpecResponse
 import com.yuncodelab.sku.core.utils.SkuLogger
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 /**
  * Assets 数据源实现
@@ -29,10 +31,10 @@ class AssetsSkuRepository(
 
     private val gson = Gson()
 
-    override suspend fun loadSpec(): SpecResponse {
+    override suspend fun loadSpec(): SpecResponse = withContext(Dispatchers.IO) {
         SkuLogger.d(TAG, "开始加载 SKU 数据")
 
-        return try {
+        try {
             val json = readJsonFromAssets(DEFAULT_FILE)
 
             // 关键点：使用 TypeToken 获取带泛型的 Type

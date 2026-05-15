@@ -9,10 +9,12 @@ import com.yuncodelab.sku.core.model.result.SpecResult
 import com.yuncodelab.sku.core.utils.SkuLogger
 import com.yuncodelab.sku.data.repository.AssetsSkuRepository
 import com.yuncodelab.sku.data.repository.SkuRepository
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 /**
  * SKU 规格选择 ViewModel
@@ -64,7 +66,9 @@ class SkuViewModel(
             )
 
             // 初始化规格 UI
-            val uiList = skuEngine.initSpecStatus()
+            val uiList = withContext(Dispatchers.Default) {
+                skuEngine.initSpecStatus()
+            }
             _specUiList.value = uiList
 
             updateSelectedSku()
@@ -78,18 +82,26 @@ class SkuViewModel(
         // 如果引擎尚未初始化则直接返回
         if (!::skuEngine.isInitialized) return
 
-        val uiList = skuEngine.select(specId, valueId)
-        _specUiList.value = uiList
+        viewModelScope.launch {
+            val uiList = withContext(Dispatchers.Default) {
+                skuEngine.select(specId, valueId)
+            }
+            _specUiList.value = uiList
 
-        updateSelectedSku()
+            updateSelectedSku()
+        }
+
     }
 
     /**
      * 同步当前选中 SKU 状态
      */
-    private fun updateSelectedSku() {
-        _selectedSku.value = skuEngine.getSelectedSku().apply {
-            SkuLogger.d(TAG, "当前选中的 SKU -> $this")
+    private suspend fun updateSelectedSku() {
+        val result = withContext(Dispatchers.Default) {
+            skuEngine.getSelectedSku()
         }
+
+        _selectedSku.value = result
+        SkuLogger.d(TAG, "当前选中的 SKU -> $result")
     }
 }
